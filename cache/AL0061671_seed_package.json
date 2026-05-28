@@ -1,0 +1,1692 @@
+{
+  "identity": {
+    "plantName": "EUFAULA WWTP",
+    "location": "Eufaula, Alabama",
+    "city": "EUFAULA",
+    "state": "AL",
+    "zip": "36027",
+    "street": "845 PUMP STATION ROAD",
+    "county": "Barbour County",
+    "coordinates": {
+      "lat": 31.876846,
+      "lon": -85.168933
+    },
+    "plantType": "wastewater",
+    "npdesPermitNumber": "AL0061671",
+    "facilityStatus": "Effective",
+    "areas": "POTW, Pretreatment",
+    "universe": "Major: NPDES Individual Permit",
+    "naics": [
+      {
+        "code": "221320",
+        "description": "Sewage Treatment Facilities"
+      }
+    ],
+    "sic": [
+      {
+        "code": "4952",
+        "description": "Sewerage Systems"
+      }
+    ],
+    "permitExpirationDate": "08/31/2027",
+    "confidence": "high",
+    "owner": "The Water Works and Sewer Board of the City of Eufaula",
+    "receivingWaters": [
+      {
+        "name": "Tobannee Creek-Chattahoochee River",
+        "source": "echo_api",
+        "evidenceClass": "echo_api"
+      },
+      {
+        "name": "Barbour Creek-Chattahoochee River",
+        "source": "echo_api",
+        "evidenceClass": "echo_api"
+      }
+    ],
+    "outfalls": [
+      {
+        "id": "001",
+        "source": "echo_api",
+        "evidenceClass": "echo_api",
+        "receivingWater": "Tobannee Creek-Chattahoochee River"
+      },
+      {
+        "id": "003",
+        "source": "echo_api",
+        "evidenceClass": "echo_api",
+        "receivingWater": "Barbour Creek-Chattahoochee River"
+      }
+    ]
+  },
+  "identityPatch": {
+    "plantName": "EUFAULA WWTP",
+    "city": "EUFAULA",
+    "state": "AL",
+    "plantType": "wastewater",
+    "zip": "36027",
+    "coordinates": {
+      "lat": 31.876846,
+      "lon": -85.168933
+    },
+    "owner": "The Water Works and Sewer Board of the City of Eufaula",
+    "licensed": true
+  },
+  "overview": {
+    "basics": {
+      "processType": "Mechanical (WWTP)",
+      "influentType": "Domestic",
+      "designFlowMGD": 2.7,
+      "_sourceMeta": {
+        "sourceDoc": "AL0061671_final_permit.pdf",
+        "sourcePage": 3,
+        "confidence": 0.9,
+        "extractedAt": "2023-10-01T00:00:00Z"
+      }
+    },
+    "processTrain": {
+      "liquid": [
+        {
+          "id": "eufaula-wwtp-l1",
+          "type": "headworks",
+          "label": "Headworks",
+          "train": "liquid",
+          "order": 1,
+          "stage": "preliminary",
+          "status": "active",
+          "notes": "",
+          "confidence": 0.9,
+          "evidenceClass": "direct_text_extraction"
+        },
+        {
+          "id": "eufaula-wwtp-l2",
+          "type": "screening",
+          "label": "Screening",
+          "train": "liquid",
+          "order": 2,
+          "stage": "preliminary",
+          "status": "active",
+          "notes": "",
+          "confidence": 0.9,
+          "evidenceClass": "direct_text_extraction"
+        },
+        {
+          "id": "eufaula-wwtp-l3",
+          "type": "grit_removal",
+          "label": "Grit Removal",
+          "train": "liquid",
+          "order": 3,
+          "stage": "preliminary",
+          "status": "inferred",
+          "confidence": 0.55,
+          "evidenceClass": "heuristic_inference",
+          "notes": "Standard Mechanical WWTP unit process \u2014 not explicitly named in permit text"
+        },
+        {
+          "id": "eufaula-wwtp-l4",
+          "type": "primary_clarifier",
+          "label": "Primary Clarifier",
+          "train": "liquid",
+          "order": 4,
+          "stage": "primary",
+          "status": "inferred",
+          "confidence": 0.55,
+          "evidenceClass": "heuristic_inference",
+          "notes": "Standard Mechanical WWTP unit process \u2014 not explicitly named in permit text"
+        },
+        {
+          "id": "eufaula-wwtp-l5",
+          "type": "aeration_basin",
+          "label": "Aeration Basin",
+          "train": "liquid",
+          "order": 5,
+          "stage": "secondary",
+          "status": "active",
+          "notes": "",
+          "confidence": 0.9,
+          "evidenceClass": "direct_text_extraction"
+        },
+        {
+          "id": "eufaula-wwtp-l6",
+          "type": "secondary_clarifier",
+          "label": "Secondary Clarifier",
+          "train": "liquid",
+          "order": 6,
+          "stage": "secondary",
+          "status": "active",
+          "notes": "",
+          "confidence": 0.9,
+          "evidenceClass": "direct_text_extraction"
+        },
+        {
+          "id": "eufaula-wwtp-l7",
+          "type": "disinfection",
+          "label": "Chlorination",
+          "train": "liquid",
+          "order": 7,
+          "stage": "disinfection",
+          "status": "active",
+          "notes": "",
+          "confidence": 0.9,
+          "evidenceClass": "direct_text_extraction"
+        },
+        {
+          "id": "eufaula-wwtp-l8",
+          "type": "outfall",
+          "label": "Outfall 001",
+          "train": "liquid",
+          "order": 8,
+          "stage": "discharge",
+          "status": "active",
+          "notes": "",
+          "confidence": 0.9,
+          "evidenceClass": "direct_text_extraction"
+        }
+      ],
+      "solids": [
+        {
+          "id": "eufaula-wwtp-s1",
+          "type": "biosolids_storage",
+          "label": "Biosolids Storage",
+          "train": "solids",
+          "order": 1,
+          "stage": "secondary",
+          "status": "active",
+          "confidence": 0.9,
+          "evidenceClass": "direct_text_extraction",
+          "notes": "Detected in permit text on page 5"
+        }
+      ],
+      "connections": []
+    }
+  },
+  "permitLimits": [
+    {
+      "parameter": "BOD, carb-5 day, 20 deg C, percent removal",
+      "parameterCode": "80091",
+      "outfall": "001",
+      "samplePoint": "Percent Removal",
+      "unit": "%",
+      "limits": [
+        {
+          "value": 85.0,
+          "qualifier": ">=",
+          "limitType": "Monthly",
+          "statistic": "minimum",
+          "effectiveDate": "01-SEP-22",
+          "expirationDate": "31-AUG-27",
+          "seasonality": "Not Seasonal",
+          "reportOnly": false,
+          "samplePoint": "Percent Removal",
+          "evidenceClass": "adem_defaults",
+          "_sourceMeta": {
+            "sourceDoc": "EPA ECHO Effluent Chart API",
+            "sourcePage": null,
+            "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+            "confidence": 0.95
+          },
+          "frequency": "Weekly",
+          "sampleType": "Calculated"
+        }
+      ],
+      "_sourceMeta": {
+        "sourceDoc": "EPA ECHO Effluent Chart API",
+        "sourcePage": null,
+        "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+        "confidence": 0.95
+      }
+    },
+    {
+      "parameter": "BOD, carbonaceous [5 day, 20 C]",
+      "parameterCode": "80082",
+      "outfall": "001",
+      "samplePoint": "Effluent Gross",
+      "unit": "lb/d",
+      "limits": [
+        {
+          "value": 562.0,
+          "qualifier": "<=",
+          "limitType": "Monthly",
+          "statistic": "average",
+          "effectiveDate": "01-SEP-22",
+          "expirationDate": "31-AUG-27",
+          "seasonality": "Not Seasonal",
+          "reportOnly": false,
+          "samplePoint": "Effluent Gross",
+          "evidenceClass": "adem_defaults",
+          "_sourceMeta": {
+            "sourceDoc": "EPA ECHO Effluent Chart API",
+            "sourcePage": null,
+            "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+            "confidence": 0.95
+          },
+          "frequency": "Weekly",
+          "sampleType": "24-Hr Composite"
+        },
+        {
+          "value": 844.0,
+          "qualifier": "<=",
+          "limitType": "Weekly",
+          "statistic": "average",
+          "effectiveDate": "01-SEP-22",
+          "expirationDate": "31-AUG-27",
+          "seasonality": "Not Seasonal",
+          "reportOnly": false,
+          "samplePoint": "Effluent Gross",
+          "evidenceClass": "adem_defaults",
+          "_sourceMeta": {
+            "sourceDoc": "EPA ECHO Effluent Chart API",
+            "sourcePage": null,
+            "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+            "confidence": 0.95
+          },
+          "frequency": "Weekly",
+          "sampleType": "24-Hr Composite"
+        }
+      ],
+      "_sourceMeta": {
+        "sourceDoc": "EPA ECHO Effluent Chart API",
+        "sourcePage": null,
+        "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+        "confidence": 0.95
+      }
+    },
+    {
+      "parameter": "BOD, carbonaceous [5 day, 20 C]",
+      "parameterCode": "80082",
+      "outfall": "001",
+      "samplePoint": "Effluent Gross",
+      "unit": "mg/L",
+      "limits": [
+        {
+          "value": 25.0,
+          "qualifier": "<=",
+          "limitType": "Monthly",
+          "statistic": "average",
+          "effectiveDate": "01-SEP-22",
+          "expirationDate": "31-AUG-27",
+          "seasonality": "Not Seasonal",
+          "reportOnly": false,
+          "samplePoint": "Effluent Gross",
+          "evidenceClass": "adem_defaults",
+          "_sourceMeta": {
+            "sourceDoc": "EPA ECHO Effluent Chart API",
+            "sourcePage": null,
+            "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+            "confidence": 0.95
+          },
+          "frequency": "Weekly",
+          "sampleType": "24-Hr Composite"
+        },
+        {
+          "value": 37.5,
+          "qualifier": "<=",
+          "limitType": "Weekly",
+          "statistic": "average",
+          "effectiveDate": "01-SEP-22",
+          "expirationDate": "31-AUG-27",
+          "seasonality": "Not Seasonal",
+          "reportOnly": false,
+          "samplePoint": "Effluent Gross",
+          "evidenceClass": "adem_defaults",
+          "_sourceMeta": {
+            "sourceDoc": "EPA ECHO Effluent Chart API",
+            "sourcePage": null,
+            "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+            "confidence": 0.95
+          },
+          "frequency": "Weekly",
+          "sampleType": "24-Hr Composite"
+        }
+      ],
+      "_sourceMeta": {
+        "sourceDoc": "EPA ECHO Effluent Chart API",
+        "sourcePage": null,
+        "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+        "confidence": 0.95
+      }
+    },
+    {
+      "parameter": "Chlorine, total residual",
+      "parameterCode": "50060",
+      "outfall": "001",
+      "samplePoint": "Effluent Gross",
+      "unit": "mg/L",
+      "limits": [
+        {
+          "value": 1.0,
+          "qualifier": "<=",
+          "limitType": "Daily",
+          "statistic": "maximum",
+          "effectiveDate": "01-SEP-22",
+          "expirationDate": "31-AUG-27",
+          "seasonality": "Not Seasonal",
+          "reportOnly": false,
+          "samplePoint": "Effluent Gross",
+          "evidenceClass": "adem_defaults",
+          "_sourceMeta": {
+            "sourceDoc": "EPA ECHO Effluent Chart API",
+            "sourcePage": null,
+            "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+            "confidence": 0.95
+          },
+          "frequency": "2X Weekly",
+          "sampleType": "Grab"
+        }
+      ],
+      "_sourceMeta": {
+        "sourceDoc": "EPA ECHO Effluent Chart API",
+        "sourcePage": null,
+        "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+        "confidence": 0.95
+      }
+    },
+    {
+      "parameter": "E. coli",
+      "parameterCode": "51040",
+      "outfall": "001",
+      "samplePoint": "Effluent Gross",
+      "unit": "#/100mL",
+      "limits": [
+        {
+          "value": 235.0,
+          "qualifier": "<=",
+          "limitType": "Daily",
+          "statistic": "maximum",
+          "effectiveDate": "01-SEP-22",
+          "expirationDate": "31-AUG-27",
+          "seasonality": "Seasonal \u2014 Summer (May-October) / Winter (November-April)",
+          "reportOnly": false,
+          "samplePoint": "Effluent Gross",
+          "evidenceClass": "adem_defaults",
+          "_sourceMeta": {
+            "sourceDoc": "EPA ECHO Effluent Chart API",
+            "sourcePage": null,
+            "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+            "confidence": 0.95
+          },
+          "frequency": "2X Weekly",
+          "sampleType": "Grab"
+        },
+        {
+          "value": 126.0,
+          "qualifier": "<=",
+          "limitType": "Monthly",
+          "statistic": "average",
+          "effectiveDate": "01-SEP-22",
+          "expirationDate": "31-AUG-27",
+          "seasonality": "Seasonal \u2014 Summer (May-October) / Winter (November-April)",
+          "reportOnly": false,
+          "samplePoint": "Effluent Gross",
+          "evidenceClass": "adem_defaults",
+          "_sourceMeta": {
+            "sourceDoc": "EPA ECHO Effluent Chart API",
+            "sourcePage": null,
+            "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+            "confidence": 0.95
+          },
+          "frequency": "2X Weekly",
+          "sampleType": "Grab"
+        }
+      ],
+      "_sourceMeta": {
+        "sourceDoc": "EPA ECHO Effluent Chart API",
+        "sourcePage": null,
+        "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+        "confidence": 0.95
+      }
+    },
+    {
+      "parameter": "Nitrogen, ammonia total [as N]",
+      "parameterCode": "00610",
+      "outfall": "001",
+      "samplePoint": "Effluent Gross",
+      "unit": "lb/d",
+      "limits": [
+        {
+          "value": 450.0,
+          "qualifier": "<=",
+          "limitType": "Monthly",
+          "statistic": "average",
+          "effectiveDate": "01-SEP-22",
+          "expirationDate": "31-AUG-27",
+          "seasonality": "Not Seasonal",
+          "reportOnly": false,
+          "samplePoint": "Effluent Gross",
+          "evidenceClass": "echo_api",
+          "_sourceMeta": {
+            "sourceDoc": "EPA ECHO Effluent Chart API",
+            "sourcePage": null,
+            "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+            "confidence": 0.95
+          },
+          "frequency": "2X Weekly",
+          "sampleType": "Composite"
+        },
+        {
+          "value": 675.0,
+          "qualifier": "<=",
+          "limitType": "Weekly",
+          "statistic": "average",
+          "effectiveDate": "01-SEP-22",
+          "expirationDate": "31-AUG-27",
+          "seasonality": "Not Seasonal",
+          "reportOnly": false,
+          "samplePoint": "Effluent Gross",
+          "evidenceClass": "adem_defaults",
+          "_sourceMeta": {
+            "sourceDoc": "EPA ECHO Effluent Chart API",
+            "sourcePage": null,
+            "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+            "confidence": 0.95
+          },
+          "frequency": "Weekly",
+          "sampleType": "24-Hr Composite"
+        }
+      ],
+      "_sourceMeta": {
+        "sourceDoc": "EPA ECHO Effluent Chart API",
+        "sourcePage": null,
+        "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+        "confidence": 0.95
+      }
+    },
+    {
+      "parameter": "Nitrogen, ammonia total [as N]",
+      "parameterCode": "00610",
+      "outfall": "001",
+      "samplePoint": "Effluent Gross",
+      "unit": "mg/L",
+      "limits": [
+        {
+          "value": 20.0,
+          "qualifier": "<=",
+          "limitType": "Monthly",
+          "statistic": "average",
+          "effectiveDate": "01-SEP-22",
+          "expirationDate": "31-AUG-27",
+          "seasonality": "Not Seasonal",
+          "reportOnly": false,
+          "samplePoint": "Effluent Gross",
+          "evidenceClass": "adem_defaults",
+          "_sourceMeta": {
+            "sourceDoc": "EPA ECHO Effluent Chart API",
+            "sourcePage": null,
+            "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+            "confidence": 0.95
+          },
+          "frequency": "Weekly",
+          "sampleType": "24-Hr Composite"
+        },
+        {
+          "value": 30.0,
+          "qualifier": "<=",
+          "limitType": "Weekly",
+          "statistic": "average",
+          "effectiveDate": "01-SEP-22",
+          "expirationDate": "31-AUG-27",
+          "seasonality": "Not Seasonal",
+          "reportOnly": false,
+          "samplePoint": "Effluent Gross",
+          "evidenceClass": "adem_defaults",
+          "_sourceMeta": {
+            "sourceDoc": "EPA ECHO Effluent Chart API",
+            "sourcePage": null,
+            "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+            "confidence": 0.95
+          },
+          "frequency": "Weekly",
+          "sampleType": "24-Hr Composite"
+        }
+      ],
+      "_sourceMeta": {
+        "sourceDoc": "EPA ECHO Effluent Chart API",
+        "sourcePage": null,
+        "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+        "confidence": 0.95
+      }
+    },
+    {
+      "parameter": "Oxygen, dissolved [DO]",
+      "parameterCode": "00300",
+      "outfall": "001",
+      "samplePoint": "Effluent Gross",
+      "unit": "mg/L",
+      "limits": [
+        {
+          "value": 5.0,
+          "qualifier": ">=",
+          "limitType": "Daily",
+          "statistic": "minimum",
+          "effectiveDate": "01-SEP-22",
+          "expirationDate": "31-AUG-27",
+          "seasonality": "Not Seasonal",
+          "reportOnly": false,
+          "samplePoint": "Effluent Gross",
+          "evidenceClass": "echo_api",
+          "_sourceMeta": {
+            "sourceDoc": "EPA ECHO Effluent Chart API",
+            "sourcePage": null,
+            "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+            "confidence": 0.95
+          },
+          "frequency": "Continuous",
+          "sampleType": "composite"
+        }
+      ],
+      "_sourceMeta": {
+        "sourceDoc": "EPA ECHO Effluent Chart API",
+        "sourcePage": null,
+        "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+        "confidence": 0.95
+      }
+    },
+    {
+      "parameter": "Solids, suspended percent removal",
+      "parameterCode": "81011",
+      "outfall": "001",
+      "samplePoint": "Percent Removal",
+      "unit": "%",
+      "limits": [
+        {
+          "value": 85.0,
+          "qualifier": ">=",
+          "limitType": "Monthly",
+          "statistic": "minimum",
+          "effectiveDate": "01-SEP-22",
+          "expirationDate": "31-AUG-27",
+          "seasonality": "Not Seasonal",
+          "reportOnly": false,
+          "samplePoint": "Percent Removal",
+          "evidenceClass": "adem_defaults",
+          "_sourceMeta": {
+            "sourceDoc": "EPA ECHO Effluent Chart API",
+            "sourcePage": null,
+            "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+            "confidence": 0.95
+          },
+          "frequency": "Monthly",
+          "sampleType": "Calculated"
+        }
+      ],
+      "_sourceMeta": {
+        "sourceDoc": "EPA ECHO Effluent Chart API",
+        "sourcePage": null,
+        "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+        "confidence": 0.95
+      }
+    },
+    {
+      "parameter": "Solids, total suspended",
+      "parameterCode": "00530",
+      "outfall": "001",
+      "samplePoint": "Effluent Gross",
+      "unit": "lb/d",
+      "limits": [
+        {
+          "value": 675.0,
+          "qualifier": "<=",
+          "limitType": "Monthly",
+          "statistic": "average",
+          "effectiveDate": "01-SEP-22",
+          "expirationDate": "31-AUG-27",
+          "seasonality": "Not Seasonal",
+          "reportOnly": false,
+          "samplePoint": "Effluent Gross",
+          "evidenceClass": "adem_defaults",
+          "_sourceMeta": {
+            "sourceDoc": "EPA ECHO Effluent Chart API",
+            "sourcePage": null,
+            "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+            "confidence": 0.95
+          },
+          "frequency": "Monthly",
+          "sampleType": "24-Hr Composite"
+        },
+        {
+          "value": 1013.0,
+          "qualifier": "<=",
+          "limitType": "Weekly",
+          "statistic": "average",
+          "effectiveDate": "01-SEP-22",
+          "expirationDate": "31-AUG-27",
+          "seasonality": "Not Seasonal",
+          "reportOnly": false,
+          "samplePoint": "Effluent Gross",
+          "evidenceClass": "adem_defaults",
+          "_sourceMeta": {
+            "sourceDoc": "EPA ECHO Effluent Chart API",
+            "sourcePage": null,
+            "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+            "confidence": 0.95
+          },
+          "frequency": "Monthly",
+          "sampleType": "24-Hr Composite"
+        }
+      ],
+      "_sourceMeta": {
+        "sourceDoc": "EPA ECHO Effluent Chart API",
+        "sourcePage": null,
+        "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+        "confidence": 0.95
+      }
+    },
+    {
+      "parameter": "Solids, total suspended",
+      "parameterCode": "00530",
+      "outfall": "001",
+      "samplePoint": "Effluent Gross",
+      "unit": "mg/L",
+      "limits": [
+        {
+          "value": 30.0,
+          "qualifier": "<=",
+          "limitType": "Monthly",
+          "statistic": "average",
+          "effectiveDate": "01-SEP-22",
+          "expirationDate": "31-AUG-27",
+          "seasonality": "Not Seasonal",
+          "reportOnly": false,
+          "samplePoint": "Effluent Gross",
+          "evidenceClass": "adem_defaults",
+          "_sourceMeta": {
+            "sourceDoc": "EPA ECHO Effluent Chart API",
+            "sourcePage": null,
+            "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+            "confidence": 0.95
+          },
+          "frequency": "Monthly",
+          "sampleType": "24-Hr Composite"
+        },
+        {
+          "value": 45.0,
+          "qualifier": "<=",
+          "limitType": "Weekly",
+          "statistic": "average",
+          "effectiveDate": "01-SEP-22",
+          "expirationDate": "31-AUG-27",
+          "seasonality": "Not Seasonal",
+          "reportOnly": false,
+          "samplePoint": "Effluent Gross",
+          "evidenceClass": "adem_defaults",
+          "_sourceMeta": {
+            "sourceDoc": "EPA ECHO Effluent Chart API",
+            "sourcePage": null,
+            "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+            "confidence": 0.95
+          },
+          "frequency": "Monthly",
+          "sampleType": "24-Hr Composite"
+        }
+      ],
+      "_sourceMeta": {
+        "sourceDoc": "EPA ECHO Effluent Chart API",
+        "sourcePage": null,
+        "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+        "confidence": 0.95
+      }
+    },
+    {
+      "parameter": "Toxicity [acute], Ceriodaphnia dubia",
+      "parameterCode": "61425",
+      "outfall": "001",
+      "samplePoint": "Effluent Gross",
+      "unit": "pass=0;fail=1",
+      "limits": [
+        {
+          "value": 0.0,
+          "qualifier": "<=",
+          "limitType": "Single Sample",
+          "statistic": "maximum",
+          "effectiveDate": "01-SEP-22",
+          "expirationDate": "31-AUG-27",
+          "seasonality": "Not Seasonal",
+          "reportOnly": false,
+          "samplePoint": "Effluent Gross",
+          "evidenceClass": "adem_defaults",
+          "_sourceMeta": {
+            "sourceDoc": "EPA ECHO Effluent Chart API",
+            "sourcePage": null,
+            "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+            "confidence": 0.95
+          },
+          "frequency": "2X Weekly",
+          "sampleType": "Grab"
+        }
+      ],
+      "_sourceMeta": {
+        "sourceDoc": "EPA ECHO Effluent Chart API",
+        "sourcePage": null,
+        "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+        "confidence": 0.95
+      }
+    },
+    {
+      "parameter": "Toxicity [acute], Pimephales promelas [Fathead Minnow]",
+      "parameterCode": "61427",
+      "outfall": "001",
+      "samplePoint": "Effluent Gross",
+      "unit": "pass=0;fail=1",
+      "limits": [
+        {
+          "value": 0.0,
+          "qualifier": "<=",
+          "limitType": "Single Sample",
+          "statistic": "maximum",
+          "effectiveDate": "01-SEP-22",
+          "expirationDate": "31-AUG-27",
+          "seasonality": "Not Seasonal",
+          "reportOnly": false,
+          "samplePoint": "Effluent Gross",
+          "evidenceClass": "adem_defaults",
+          "_sourceMeta": {
+            "sourceDoc": "EPA ECHO Effluent Chart API",
+            "sourcePage": null,
+            "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+            "confidence": 0.95
+          },
+          "frequency": "2X Weekly",
+          "sampleType": "Grab"
+        }
+      ],
+      "_sourceMeta": {
+        "sourceDoc": "EPA ECHO Effluent Chart API",
+        "sourcePage": null,
+        "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+        "confidence": 0.95
+      }
+    },
+    {
+      "parameter": "pH",
+      "parameterCode": "00400",
+      "outfall": "001",
+      "samplePoint": "Effluent Gross",
+      "unit": "SU",
+      "limits": [
+        {
+          "value": 9.0,
+          "qualifier": "<=",
+          "limitType": "Daily",
+          "statistic": "maximum",
+          "effectiveDate": "01-SEP-22",
+          "expirationDate": "31-AUG-27",
+          "seasonality": "Not Seasonal",
+          "reportOnly": false,
+          "samplePoint": "Effluent Gross",
+          "evidenceClass": "adem_defaults",
+          "_sourceMeta": {
+            "sourceDoc": "EPA ECHO Effluent Chart API",
+            "sourcePage": null,
+            "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+            "confidence": 0.95
+          },
+          "frequency": "2X Weekly",
+          "sampleType": "Grab"
+        },
+        {
+          "value": 6.0,
+          "qualifier": ">=",
+          "limitType": "Daily",
+          "statistic": "minimum",
+          "effectiveDate": "01-SEP-22",
+          "expirationDate": "31-AUG-27",
+          "seasonality": "Not Seasonal",
+          "reportOnly": false,
+          "samplePoint": "Effluent Gross",
+          "evidenceClass": "adem_defaults",
+          "_sourceMeta": {
+            "sourceDoc": "EPA ECHO Effluent Chart API",
+            "sourcePage": null,
+            "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+            "confidence": 0.95
+          },
+          "frequency": "2X Weekly",
+          "sampleType": "Grab"
+        }
+      ],
+      "_sourceMeta": {
+        "sourceDoc": "EPA ECHO Effluent Chart API",
+        "sourcePage": null,
+        "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+        "confidence": 0.95
+      }
+    },
+    {
+      "parameter": "Oil & Grease",
+      "parameterCode": "00556",
+      "outfall": "003",
+      "samplePoint": "Storm Water",
+      "unit": "mg/L",
+      "limits": [
+        {
+          "value": 15.0,
+          "qualifier": "<=",
+          "limitType": "Daily",
+          "statistic": "maximum",
+          "effectiveDate": "01-JAN-23",
+          "expirationDate": "31-AUG-27",
+          "seasonality": "Not Seasonal",
+          "reportOnly": false,
+          "samplePoint": "Storm Water",
+          "evidenceClass": "adem_defaults",
+          "_sourceMeta": {
+            "sourceDoc": "EPA ECHO Effluent Chart API",
+            "sourcePage": null,
+            "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+            "confidence": 0.95
+          },
+          "frequency": "Monthly",
+          "sampleType": "Grab"
+        }
+      ],
+      "_sourceMeta": {
+        "sourceDoc": "EPA ECHO Effluent Chart API",
+        "sourcePage": null,
+        "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+        "confidence": 0.95
+      }
+    }
+  ],
+  "nymphLogs": {
+    "chemicalsDosing": [
+      {
+        "value": "Chlorine is used for disinfection.",
+        "source": "permit_pdf",
+        "evidenceClass": "direct_text_extraction",
+        "confidence": 0.9,
+        "status": "confirmed",
+        "tags": [
+          "disinfection",
+          "chlorination"
+        ],
+        "lastUpdated": "2023-10-10T12:00:00",
+        "_sourceMeta": {
+          "sourceDoc": "AL0061671_final_permit.pdf",
+          "sourcePage": 40,
+          "confidence": 0.9,
+          "extractedAt": "2023-10-10T12:00:00"
+        }
+      },
+      {
+        "value": "Chlorination used for disinfection. Total Residual Chlorine (TRC) monitored at effluent. Dechlorination required if TRC exceeds 0.05 mg/L limit.",
+        "source": "permit_pdf",
+        "evidenceClass": "direct_text_extraction",
+        "confidence": 0.85,
+        "status": "confirmed",
+        "tags": [
+          "public_seed",
+          "chemicals",
+          "disinfection"
+        ],
+        "lastUpdated": "2026-05-28T15:24:10.087469+00:00",
+        "_sourceMeta": {
+          "sourceDoc": "AL0061671_final_permit.pdf",
+          "sourcePage": 32,
+          "confidence": 0.85,
+          "extractedAt": "2026-05-28T15:24:10.087469+00:00"
+        }
+      },
+      {
+        "value": "Dechlorination applied post-disinfection using chemical reducing agent. Required to reduce TRC to effluent permit limit.",
+        "source": "permit_pdf",
+        "evidenceClass": "direct_text_extraction",
+        "confidence": 0.85,
+        "status": "confirmed",
+        "tags": [
+          "public_seed",
+          "chemicals",
+          "dechlorination"
+        ],
+        "lastUpdated": "2026-05-28T15:24:10.087469+00:00",
+        "_sourceMeta": {
+          "sourceDoc": "AL0061671_final_permit.pdf",
+          "sourcePage": 32,
+          "confidence": 0.85,
+          "extractedAt": "2026-05-28T15:24:10.087469+00:00"
+        }
+      }
+    ],
+    "operatingHistory": [
+      {
+        "value": "The Chattahoochee River at this location is classified for Swimming and Other Whole Body Water-Contact Sports and Fish and Wildlife uses.",
+        "source": "permit_pdf",
+        "evidenceClass": "direct_text_extraction",
+        "confidence": 1.0,
+        "status": "confirmed",
+        "tags": [
+          "receiving water classification"
+        ],
+        "lastUpdated": "2023-10-01T00:00:00",
+        "_sourceMeta": {
+          "sourceDoc": "AL0061671_final_permit.pdf",
+          "sourcePage": 50,
+          "confidence": 1.0
+        }
+      },
+      {
+        "value": "E. coli exceedance recorded in Q2 2023 (Apr-Jun). Single sample maximum limit exceeded by 287% at discharge point 001.",
+        "source": "echo_api",
+        "evidenceClass": "echo_api",
+        "confidence": 0.95,
+        "status": "confirmed",
+        "tags": [
+          "public_seed",
+          "violation",
+          "operating_history",
+          "ecoli"
+        ],
+        "lastUpdated": "2026-05-28T15:24:06.517037+00:00",
+        "_sourceMeta": {
+          "sourceDoc": "EPA ECHO CWAEffluentCompliance \u2014 NPDES AL0061671",
+          "sourcePage": null,
+          "sourceUrl": "https://echodata.epa.gov/echo/dfr_rest_services.get_dfr?p_id=AL0061671&output=JSON"
+        }
+      },
+      {
+        "value": "E. coli exceedance recorded in Q1 2024 (Jan-Mar). Monthly average limit exceeded by 236%; single sample maximum limit exceeded by 1455% at discharge point 001.",
+        "source": "echo_api",
+        "evidenceClass": "echo_api",
+        "confidence": 0.95,
+        "status": "confirmed",
+        "tags": [
+          "public_seed",
+          "violation",
+          "operating_history",
+          "ecoli"
+        ],
+        "lastUpdated": "2026-05-28T15:24:06.517037+00:00",
+        "_sourceMeta": {
+          "sourceDoc": "EPA ECHO CWAEffluentCompliance \u2014 NPDES AL0061671",
+          "sourcePage": null,
+          "sourceUrl": "https://echodata.epa.gov/echo/dfr_rest_services.get_dfr?p_id=AL0061671&output=JSON"
+        }
+      },
+      {
+        "value": "E. coli exceedance recorded in Q3 2024 (Jul-Sep). Monthly average limit exceeded by 36%; single sample maximum limit exceeded by 410% at discharge point 001.",
+        "source": "echo_api",
+        "evidenceClass": "echo_api",
+        "confidence": 0.95,
+        "status": "confirmed",
+        "tags": [
+          "public_seed",
+          "violation",
+          "operating_history",
+          "ecoli"
+        ],
+        "lastUpdated": "2026-05-28T15:24:06.517037+00:00",
+        "_sourceMeta": {
+          "sourceDoc": "EPA ECHO CWAEffluentCompliance \u2014 NPDES AL0061671",
+          "sourcePage": null,
+          "sourceUrl": "https://echodata.epa.gov/echo/dfr_rest_services.get_dfr?p_id=AL0061671&output=JSON"
+        }
+      },
+      {
+        "value": "E. coli exceedance recorded in Q4 2025 (Oct-Dec). Single sample maximum limit exceeded by 43% at discharge point 001.",
+        "source": "echo_api",
+        "evidenceClass": "echo_api",
+        "confidence": 0.95,
+        "status": "confirmed",
+        "tags": [
+          "public_seed",
+          "violation",
+          "operating_history",
+          "ecoli"
+        ],
+        "lastUpdated": "2026-05-28T15:24:06.517037+00:00",
+        "_sourceMeta": {
+          "sourceDoc": "EPA ECHO CWAEffluentCompliance \u2014 NPDES AL0061671",
+          "sourcePage": null,
+          "sourceUrl": "https://echodata.epa.gov/echo/dfr_rest_services.get_dfr?p_id=AL0061671&output=JSON"
+        }
+      },
+      {
+        "value": "Recurring E. coli violations documented in 4 of 12 quarters (2023-2025). Violations occurred in Q2 2023, Q1 2024, Q3 2024, Q4 2025.",
+        "source": "echo_api",
+        "evidenceClass": "echo_api",
+        "confidence": 0.95,
+        "status": "confirmed",
+        "tags": [
+          "public_seed",
+          "violation",
+          "operating_history",
+          "summary",
+          "ecoli"
+        ],
+        "lastUpdated": "2026-05-28T15:24:06.517037+00:00",
+        "_sourceMeta": {
+          "sourceDoc": "EPA ECHO CWAEffluentCompliance \u2014 NPDES AL0061671",
+          "sourcePage": null,
+          "sourceUrl": "https://echodata.epa.gov/echo/dfr_rest_services.get_dfr?p_id=AL0061671&output=JSON"
+        }
+      }
+    ],
+    "proceduresPreferences": [
+      {
+        "value": "Monthly DMR reporting required for BOD, carb-5 day, 20 deg C, percent removal at outfall 001.",
+        "source": "echo_api",
+        "evidenceClass": "echo_api",
+        "confidence": 0.85,
+        "status": "inferred",
+        "tags": [
+          "public_seed",
+          "dmr",
+          "reporting",
+          "procedures"
+        ],
+        "lastUpdated": "2026-05-28T15:24:17.272650+00:00",
+        "_sourceMeta": {
+          "sourceDoc": "EPA ECHO Effluent Chart API \u2014 inferred procedure from permit limit",
+          "sourcePage": null,
+          "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+          "confidence": 0.85
+        }
+      },
+      {
+        "value": "Monthly DMR reporting required for BOD, carbonaceous [5 day, 20 C] at outfall 001.",
+        "source": "echo_api",
+        "evidenceClass": "echo_api",
+        "confidence": 0.85,
+        "status": "inferred",
+        "tags": [
+          "public_seed",
+          "dmr",
+          "reporting",
+          "procedures"
+        ],
+        "lastUpdated": "2026-05-28T15:24:17.272650+00:00",
+        "_sourceMeta": {
+          "sourceDoc": "EPA ECHO Effluent Chart API \u2014 inferred procedure from permit limit",
+          "sourcePage": null,
+          "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+          "confidence": 0.85
+        }
+      },
+      {
+        "value": "Monthly DMR reporting required for Nitrogen, ammonia total [as N] at outfall 001.",
+        "source": "echo_api",
+        "evidenceClass": "echo_api",
+        "confidence": 0.85,
+        "status": "inferred",
+        "tags": [
+          "public_seed",
+          "dmr",
+          "reporting",
+          "procedures"
+        ],
+        "lastUpdated": "2026-05-28T15:24:17.272650+00:00",
+        "_sourceMeta": {
+          "sourceDoc": "EPA ECHO Effluent Chart API \u2014 inferred procedure from permit limit",
+          "sourcePage": null,
+          "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+          "confidence": 0.85
+        }
+      },
+      {
+        "value": "Monthly DMR reporting required for Solids, suspended percent removal at outfall 001.",
+        "source": "echo_api",
+        "evidenceClass": "echo_api",
+        "confidence": 0.85,
+        "status": "inferred",
+        "tags": [
+          "public_seed",
+          "dmr",
+          "reporting",
+          "procedures"
+        ],
+        "lastUpdated": "2026-05-28T15:24:17.272650+00:00",
+        "_sourceMeta": {
+          "sourceDoc": "EPA ECHO Effluent Chart API \u2014 inferred procedure from permit limit",
+          "sourcePage": null,
+          "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+          "confidence": 0.85
+        }
+      },
+      {
+        "value": "Monthly DMR reporting required for Solids, total suspended at outfall 001.",
+        "source": "echo_api",
+        "evidenceClass": "echo_api",
+        "confidence": 0.85,
+        "status": "inferred",
+        "tags": [
+          "public_seed",
+          "dmr",
+          "reporting",
+          "procedures"
+        ],
+        "lastUpdated": "2026-05-28T15:24:17.272650+00:00",
+        "_sourceMeta": {
+          "sourceDoc": "EPA ECHO Effluent Chart API \u2014 inferred procedure from permit limit",
+          "sourcePage": null,
+          "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+          "confidence": 0.85
+        }
+      },
+      {
+        "value": "Whole Effluent Toxicity (WET) testing required \u2014 acute toxicity pass/fail for Ceriodaphnia dubia and Fathead Minnow (Pimephales promelas) at outfall 001.",
+        "source": "echo_api",
+        "evidenceClass": "echo_api",
+        "confidence": 0.85,
+        "status": "inferred",
+        "tags": [
+          "public_seed",
+          "wet_testing",
+          "toxicity",
+          "procedures"
+        ],
+        "lastUpdated": "2026-05-28T15:24:17.272650+00:00",
+        "_sourceMeta": {
+          "sourceDoc": "EPA ECHO Effluent Chart API \u2014 inferred procedure from permit limit",
+          "sourcePage": null,
+          "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+          "confidence": 0.85
+        }
+      },
+      {
+        "value": "E. coli sampling required at outfall 001. Monthly geometric mean and single sample maximum limits apply.",
+        "source": "echo_api",
+        "evidenceClass": "echo_api",
+        "confidence": 0.85,
+        "status": "inferred",
+        "tags": [
+          "public_seed",
+          "ecoli",
+          "sampling",
+          "procedures"
+        ],
+        "lastUpdated": "2026-05-28T15:24:17.272650+00:00",
+        "_sourceMeta": {
+          "sourceDoc": "EPA ECHO Effluent Chart API \u2014 inferred procedure from permit limit",
+          "sourcePage": null,
+          "sourceUrl": "https://echodata.epa.gov/echo/eff_rest_services.get_effluent_chart?p_id=AL0061671&output=JSON",
+          "confidence": 0.85
+        }
+      },
+      {
+        "value": "Participation in AEPACS for DMRs and SSOs submissions is required.",
+        "source": "permit_pdf",
+        "evidenceClass": "direct_text_extraction",
+        "confidence": 0.9,
+        "status": "confirmed",
+        "tags": [
+          "AEPACS",
+          "DMR",
+          "SSO"
+        ],
+        "lastUpdated": "2023-10-01T00:00:00Z",
+        "_sourceMeta": {
+          "sourceDoc": "AL0061671_final_permit.pdf",
+          "sourcePage": 1,
+          "confidence": 0.9
+        }
+      },
+      {
+        "value": "SSO Response Plan to be developed within 120 days of the effective date of this Permit.",
+        "source": "permit_pdf",
+        "evidenceClass": "direct_text_extraction",
+        "confidence": 0.9,
+        "status": "confirmed",
+        "tags": [
+          "SSO Response Plan"
+        ],
+        "lastUpdated": "2023-10-10T12:00:00",
+        "_sourceMeta": {
+          "sourceDoc": "AL0061671_final_permit.pdf",
+          "sourcePage": 34,
+          "confidence": 0.9,
+          "extractedAt": "2023-10-10T12:00:00"
+        }
+      },
+      {
+        "value": "Sanitary Sewer Overflow (SSO) Response Plan required. Must be developed and implemented within 120 days of permit effective date per Part IV.E.",
+        "source": "permit_pdf",
+        "evidenceClass": "direct_text_extraction",
+        "confidence": 0.95,
+        "status": "confirmed",
+        "tags": [
+          "public_seed",
+          "SSO",
+          "response_plan",
+          "procedures"
+        ],
+        "lastUpdated": "2026-05-28T15:24:10.087469+00:00",
+        "_sourceMeta": {
+          "sourceDoc": "AL0061671_final_permit.pdf",
+          "sourcePage": 2,
+          "confidence": 0.95,
+          "extractedAt": "2026-05-28T15:24:10.087469+00:00"
+        }
+      },
+      {
+        "value": "Municipal Water Pollution Prevention (MWPP) Annual Report required by May 31st each year.",
+        "source": "permit_pdf",
+        "evidenceClass": "direct_text_extraction",
+        "confidence": 0.95,
+        "status": "confirmed",
+        "tags": [
+          "public_seed",
+          "MWPP",
+          "annual_report",
+          "procedures"
+        ],
+        "lastUpdated": "2026-05-28T15:24:10.087469+00:00",
+        "_sourceMeta": {
+          "sourceDoc": "AL0061671_final_permit.pdf",
+          "sourcePage": 16,
+          "confidence": 0.95,
+          "extractedAt": "2026-05-28T15:24:10.087469+00:00"
+        }
+      }
+    ],
+    "historicalOutcomes": [
+      {
+        "value": "State Agency inspection/evaluation conducted on 07/16/2025 \u2014 type: Base Program - Evaluation.",
+        "source": "echo_api",
+        "evidenceClass": "echo_api",
+        "confidence": 0.95,
+        "status": "confirmed",
+        "tags": [
+          "public_seed",
+          "inspection",
+          "compliance",
+          "echo"
+        ],
+        "lastUpdated": "2026-05-28T15:24:06.517037+00:00",
+        "_sourceMeta": {
+          "sourceDoc": "EPA ECHO ComplianceHistory \u2014 NPDES AL0061671",
+          "sourcePage": null,
+          "sourceUrl": "https://echodata.epa.gov/echo/dfr_rest_services.get_dfr?p_id=AL0061671&output=JSON"
+        }
+      },
+      {
+        "value": "State Agency inspection/evaluation conducted on 06/27/2024 \u2014 type: Base Program - Evaluation.",
+        "source": "echo_api",
+        "evidenceClass": "echo_api",
+        "confidence": 0.95,
+        "status": "confirmed",
+        "tags": [
+          "public_seed",
+          "inspection",
+          "compliance",
+          "echo"
+        ],
+        "lastUpdated": "2026-05-28T15:24:06.517037+00:00",
+        "_sourceMeta": {
+          "sourceDoc": "EPA ECHO ComplianceHistory \u2014 NPDES AL0061671",
+          "sourcePage": null,
+          "sourceUrl": "https://echodata.epa.gov/echo/dfr_rest_services.get_dfr?p_id=AL0061671&output=JSON"
+        }
+      },
+      {
+        "value": "State Agency inspection/evaluation conducted on 08/29/2023 \u2014 type: Base Program - Evaluation.",
+        "source": "echo_api",
+        "evidenceClass": "echo_api",
+        "confidence": 0.95,
+        "status": "confirmed",
+        "tags": [
+          "public_seed",
+          "inspection",
+          "compliance",
+          "echo"
+        ],
+        "lastUpdated": "2026-05-28T15:24:06.517037+00:00",
+        "_sourceMeta": {
+          "sourceDoc": "EPA ECHO ComplianceHistory \u2014 NPDES AL0061671",
+          "sourcePage": null,
+          "sourceUrl": "https://echodata.epa.gov/echo/dfr_rest_services.get_dfr?p_id=AL0061671&output=JSON"
+        }
+      },
+      {
+        "value": "State Agency inspection/evaluation conducted on 11/12/2021 \u2014 type: Base Program - Evaluation.",
+        "source": "echo_api",
+        "evidenceClass": "echo_api",
+        "confidence": 0.95,
+        "status": "confirmed",
+        "tags": [
+          "public_seed",
+          "inspection",
+          "compliance",
+          "echo"
+        ],
+        "lastUpdated": "2026-05-28T15:24:06.517037+00:00",
+        "_sourceMeta": {
+          "sourceDoc": "EPA ECHO ComplianceHistory \u2014 NPDES AL0061671",
+          "sourcePage": null,
+          "sourceUrl": "https://echodata.epa.gov/echo/dfr_rest_services.get_dfr?p_id=AL0061671&output=JSON"
+        }
+      },
+      {
+        "value": "State Agency inspection/evaluation conducted on 08/11/2021 \u2014 type: Base Program - Evaluation.",
+        "source": "echo_api",
+        "evidenceClass": "echo_api",
+        "confidence": 0.95,
+        "status": "confirmed",
+        "tags": [
+          "public_seed",
+          "inspection",
+          "compliance",
+          "echo"
+        ],
+        "lastUpdated": "2026-05-28T15:24:06.517037+00:00",
+        "_sourceMeta": {
+          "sourceDoc": "EPA ECHO ComplianceHistory \u2014 NPDES AL0061671",
+          "sourcePage": null,
+          "sourceUrl": "https://echodata.epa.gov/echo/dfr_rest_services.get_dfr?p_id=AL0061671&output=JSON"
+        }
+      },
+      {
+        "value": "NPDES permit compliance violation (Other Violation) recorded for AL0061671 in period 04/01/2023 to 06/30/2023 per ECHO CWA RNC compliance record.",
+        "source": "echo_api",
+        "evidenceClass": "echo_api",
+        "confidence": 0.95,
+        "status": "confirmed",
+        "tags": [
+          "public_seed",
+          "violation",
+          "compliance",
+          "echo"
+        ],
+        "lastUpdated": "2026-05-28T15:24:06.517037+00:00",
+        "_sourceMeta": {
+          "sourceDoc": "EPA ECHO CWARNCCompliance \u2014 NPDES AL0061671",
+          "sourcePage": null,
+          "sourceUrl": "https://echodata.epa.gov/echo/dfr_rest_services.get_dfr?p_id=AL0061671&output=JSON"
+        }
+      },
+      {
+        "value": "NPDES permit compliance violation (Other Violation) recorded for AL0061671 in period 01/01/2024 to 03/31/2024 per ECHO CWA RNC compliance record.",
+        "source": "echo_api",
+        "evidenceClass": "echo_api",
+        "confidence": 0.95,
+        "status": "confirmed",
+        "tags": [
+          "public_seed",
+          "violation",
+          "compliance",
+          "echo"
+        ],
+        "lastUpdated": "2026-05-28T15:24:06.517037+00:00",
+        "_sourceMeta": {
+          "sourceDoc": "EPA ECHO CWARNCCompliance \u2014 NPDES AL0061671",
+          "sourcePage": null,
+          "sourceUrl": "https://echodata.epa.gov/echo/dfr_rest_services.get_dfr?p_id=AL0061671&output=JSON"
+        }
+      },
+      {
+        "value": "NPDES permit compliance violation (Other Violation) recorded for AL0061671 in period 07/01/2024 to 09/30/2024 per ECHO CWA RNC compliance record.",
+        "source": "echo_api",
+        "evidenceClass": "echo_api",
+        "confidence": 0.95,
+        "status": "confirmed",
+        "tags": [
+          "public_seed",
+          "violation",
+          "compliance",
+          "echo"
+        ],
+        "lastUpdated": "2026-05-28T15:24:06.517037+00:00",
+        "_sourceMeta": {
+          "sourceDoc": "EPA ECHO CWARNCCompliance \u2014 NPDES AL0061671",
+          "sourcePage": null,
+          "sourceUrl": "https://echodata.epa.gov/echo/dfr_rest_services.get_dfr?p_id=AL0061671&output=JSON"
+        }
+      },
+      {
+        "value": "NPDES permit compliance violation (Other Violation) recorded for AL0061671 in period 10/01/2025 to 12/31/2025 per ECHO CWA RNC compliance record.",
+        "source": "echo_api",
+        "evidenceClass": "echo_api",
+        "confidence": 0.95,
+        "status": "confirmed",
+        "tags": [
+          "public_seed",
+          "violation",
+          "compliance",
+          "echo"
+        ],
+        "lastUpdated": "2026-05-28T15:24:06.517037+00:00",
+        "_sourceMeta": {
+          "sourceDoc": "EPA ECHO CWARNCCompliance \u2014 NPDES AL0061671",
+          "sourcePage": null,
+          "sourceUrl": "https://echodata.epa.gov/echo/dfr_rest_services.get_dfr?p_id=AL0061671&output=JSON"
+        }
+      }
+    ]
+  },
+  "documents": [
+    {
+      "filename": "AL0061671_final_permit.pdf",
+      "fileType": "document",
+      "mimeType": "application/pdf",
+      "pageCount": 52,
+      "ingestionTimestamp": "2026-05-28T15:24:10.087469+00:00",
+      "tags": [
+        "permit",
+        "npdes",
+        "final_permit",
+        "public_seed",
+        "adem"
+      ],
+      "sourceUrl": "https://app.adem.alabama.gov/eFile/",
+      "description": "ADEM Final Permit AL0061671",
+      "extractedText": "LANCE R. LEFLEUR\nDIRECTOR\nAugust 31,2022\nADEM\nAlabama Department of Environmental Management\nadem.alabama.gov\n1400 Coliseum Blvd. 36110-2400 Post Office Box 301463\nMontgomery, Alabama 36130-1463\n(334) 271-7700 FAX (334) 271-7950\nMr. N. Kevin Heartsill, General Manager\nThe Water Works and Sewer Board of the City of Eufaula\nPost Office Box 26\nEufaula, AL 36072\nRE:\nFinal Permit\nNPDES Permit No. AL0061671\nEufaula WWTP\nBarbour County, Alabama\nDear Mr. Heartsill:\nAttached is the issued copy of the above referenced permit. Please note the permit limitations and\nconditions with which the permittee must comply. No comments were received on the draft permit during\nthe public comment period.\nFuture monitoring data should be submitted in accordance with the conditions of your permit. Please see\nPART I.C for your reporting requirements. To reduce the paperwork burden for both the Department and\nthe Permittee, when submitting the required Discharge Monitoring Reports (DMRs), please do not submit\nlab worksheets, logs, reports or other paperwork not specifically required by the permit unless requested by\nADEM staff.\nPlease be aware that Parts I.C.1.c and I.C.2.e of your permit require participation in the Department's\nAlabama Environmental Permitting and Compliance System (AEPACS) for submittal of DMRs and SSOs\nupon issuance of this permit unless valid justification as to why you cannot participate is submitted in\nwriting. SSO hotline notifications and hard copy Form 415 SSO reports may be used only with the written\napproval from the Department. AEPACS allows ADEM to electronically validate and acknowledge receipt\nof the data. This improves the accuracy of reported compliance data and reduces costs to both the regulated\ncommunity and ADEM. Please note that all AEPACS users can create the electronic DMRs and SSOS;\nhowever, only AEPACS users with certifier permissions will be able to submit the electronic DMRs and\nSSOS to ADEM.\nOur records indicate that you have utilized the Department's web-based electronic environmental (E2)\nreporting system for submittal of discharge monitoring reports (DMRs) and sanitary sewer overflow (SSO)\nnotifications/reports. The Department transitioned from the E2 Reporting System to the Alabama\nEnvironmental Permitting and Compliance System (AEPACS) for the submittal of DMRs and SSOs on\nNovember 15, 2021. AEPACS is an electronic system that allows facilities to apply for and maintain\npermits as well as submit other required applications, registrations, and certifications. In addition, the\nsystem allows facilities to submit required compliance reports or other information to the Department. The\nDepartment has used the E2 User account information to set up a similar User Profile in AEPACS based\non the following criteria:\n1.\nThe user has logged in to E2 since October 1, 2019; and\n2.\nThe E2 user account is set up using a unique email address.\nBirmingham Branch\nDecatur Branch\n110 Vulcan Road\n2715 Sandlin Road, S.W.\nBirmingham, AL 35209-4702\nDecatur, AL 35603-1333\n(205) 942-6168\n(256) 353-1713\n(205) 941-1603 (FAX)\n(256) 340-9359 (FAX)\nGREAT SEAL\nKAY IVEY\nGOVERNOR\nMobile Branch\n2204 Perimeter Road\nMobile, AL 36615-1131\n(251) 450-3400\n(251) 479-2593 (FAX)\nMobile-Coastal\n3664 Dauphin Street, Suite B\nMobile, AL 36608\n(251) 304-1176\n(251) 304-1189 (FAX)E2 users that met the above criteria will only need to establish an ADEM Web Portal account\n(https://prd.adem.alabama.gov/awp) under the same email address as their E2 account to have the same\npermissions in AEPACS as they did in E2. They will also automatically be linked to the same facilities they\nwere in E2.\nPlease also be aware that Part IV. of your permit requires that you develop, implement, and maintain a\nSanitary Sewer Overflow Response Plan.\nIf you have questions regarding this permit or monitoring requirements, please contact Shanda Torbert\nstorbert@adem.alabama.gov (334) 271-7800.\nSincerely,\nCommanderson\nEmily Anderson, Chief\nMunicipal Section\nWater Division\nEDA/jsm\nEnclosure:\ncc:\nFinal Permit\nEnvironmental Protection Agency Email\nMs. Elaine Snyder/U.S. Fish and Wildlife ServicesADEM\nAlabama Department of Environmental Management\nNATIONAL POLLUTANT\nDISCHARGE ELIMINATION\nSYSTEM PERMIT\nALABAMA\nGREAT SEA\nPERMITTEE:\nFACILITY LOCATION:\nPERMIT NUMBER:\nRECEIVING WATERS:\nTHE WATER WORKS AND SEWER BOARD OF THE CITY OF EUFAULA\nPOST OFFICE BOX 26\nEUFAULA, AL 36072\nEUFAULA WWTP\n845 PUMP STATION ROAD\nEUFAULA, ALABAMA\nBARBOUR COUNTY\nAL0061671\nChattahoochee River (Walter F George Lake)\nBarbour Creek (Walter F George Lake) (Storm Water Only)\n(2.7 MGD)\nIn accordance with and subject to the provisions of the Federal Water Pollution Control Act, as amended, 33 U.S.C. SS1251-1388 (the \"FWPCA\"),\nthe Alabama Water Pollution Control Act, as amended, Code of Alabama 1975, SS 22-22-1 to 22-22-14 (the \"AWPCA\"), the Alabama\nEnvironmental Management Act, as amended, Code of Alabama 1975, SS22-22A-1 to 22-22A-17, and rules and regulations adopted thereunder,\nand subject further"
+    }
+  ],
+  "runAudit": {
+    "sourcesSearched": [
+      {
+        "url": "https://app.adem.alabama.gov/eFile/",
+        "type": "adem_efile_playwright",
+        "fetchedAt": "2026-05-28T15:24:10.087469+00:00",
+        "resultSummary": "Downloaded via Playwright: C:\\Users\\mithu\\OneDrive\\Desktop\\nyad\\plant-knowledge-seeding-skill\\downloads\\AL0061671_final_permit.pdf"
+      },
+      {
+        "url": "https://echodata.epa.gov/echo/dfr_rest_services.get_dfr?p_id=AL0061671&output=JSON",
+        "type": "echo_api",
+        "fetchedAt": "2026-05-28T15:24:10.089313+00:00",
+        "resultSummary": "HTTP 200 \u2014 message: Success"
+      },
+      {
+        "url": "https://echodata.epa.gov/echo/dfr_rest_services.get_cwa_eff_compliance?p_id=AL0061671&output=JSON",
+        "type": "echo_api",
+        "fetchedAt": "2026-05-28T15:24:10.089313+00:00",
+        "resultSummary": "Effluent compliance record"
+      }
+    ],
+    "factsSkipped": [
+      {
+        "surface": "permitLimits.Solids, total suspended",
+        "reason": "Parameter excluded \u2014 no numeric limit values found in ECHO effluent chart; monitoring-only or pollutant scan parameter."
+      },
+      {
+        "surface": "permitLimits.Nitrogen, Kjeldahl, total [as N]",
+        "reason": "Parameter excluded \u2014 no numeric limit values found in ECHO effluent chart; monitoring-only or pollutant scan parameter."
+      },
+      {
+        "surface": "permitLimits.Nitrite + Nitrate total [as N]",
+        "reason": "Parameter excluded \u2014 no numeric limit values found in ECHO effluent chart; monitoring-only or pollutant scan parameter."
+      },
+      {
+        "surface": "permitLimits.Phosphorus, total [as P]",
+        "reason": "Parameter excluded \u2014 no numeric limit values found in ECHO effluent chart; monitoring-only or pollutant scan parameter."
+      },
+      {
+        "surface": "permitLimits.Flow, in conduit or thru treatment plant",
+        "reason": "Parameter excluded \u2014 no numeric limit values found in ECHO effluent chart; monitoring-only or pollutant scan parameter."
+      },
+      {
+        "surface": "permitLimits.Mercury, total recoverable",
+        "reason": "Parameter excluded \u2014 no numeric limit values found in ECHO effluent chart; monitoring-only or pollutant scan parameter."
+      },
+      {
+        "surface": "permitLimits.BOD, carbonaceous [5 day, 20 C]",
+        "reason": "Parameter excluded \u2014 no numeric limit values found in ECHO effluent chart; monitoring-only or pollutant scan parameter."
+      },
+      {
+        "surface": "permitLimits.pH",
+        "reason": "Parameter excluded \u2014 no numeric limit values found in ECHO effluent chart; monitoring-only or pollutant scan parameter."
+      },
+      {
+        "surface": "permitLimits.Nitrogen, ammonia total [as N]",
+        "reason": "Parameter excluded \u2014 no numeric limit values found in ECHO effluent chart; monitoring-only or pollutant scan parameter."
+      },
+      {
+        "surface": "permitLimits.E. coli",
+        "reason": "Parameter excluded \u2014 no numeric limit values found in ECHO effluent chart; monitoring-only or pollutant scan parameter."
+      },
+      {
+        "surface": "overview.basics.averageFlowMGD",
+        "reason": "averageFlowMGD \u2014 not stated in final permit or fact sheet; may be in permit application."
+      },
+      {
+        "surface": "overview.basics.peakFlowMGD",
+        "reason": "peakFlowMGD \u2014 not stated in final permit or fact sheet; may be in permit application."
+      },
+      {
+        "surface": "processTrain.connections",
+        "reason": "RAS/WAS and recycle paths require process flow diagrams. NPDES permit documents do not contain machine-readable process diagrams. Connections array left empty \u2014 requires diagram parsing capability to populate."
+      },
+      {
+        "surface": "operatingTargets",
+        "reason": "Internal plant targets are not derived from public permit limits"
+      },
+      {
+        "surface": "morReadings",
+        "reason": "Monthly Operating Report data is not public plant-specific data for this facility"
+      }
+    ],
+    "conflicts": [
+      {
+        "field": "basics._sourceMeta",
+        "values": [
+          "AL0061671_final_permit.pdf', 'sourcePage': 3, 'confidence': 0.9, 'extractedAt': '2023-10-01T00:00:00Z'}",
+          "AL0061671_final_permit.pdf', 'sourcePage': 37, 'confidence': 0.9, 'extractedAt': '2023-10-10T12:00:00'}"
+        ],
+        "resolved": "Using first value: {'sourceDoc': 'AL0061671_final_permit.pdf', 'sourcePage': 3, 'confidence': 0.9, 'extractedAt': '2023-10-01T00:00:00Z'}"
+      },
+      {
+        "field": "basics._sourceMeta",
+        "values": [
+          "AL0061671_final_permit.pdf', 'sourcePage': 3, 'confidence': 0.9, 'extractedAt': '2023-10-01T00:00:00Z'}",
+          "AL0061671_final_permit.pdf', 'sourcePage': None, 'confidence': 0.9, 'extractedAt': '2023-10-01T00:00:00'}"
+        ],
+        "resolved": "Using first value: {'sourceDoc': 'AL0061671_final_permit.pdf', 'sourcePage': 3, 'confidence': 0.9, 'extractedAt': '2023-10-01T00:00:00Z'}"
+      }
+    ],
+    "seedSummary": "Seeded 8 liquid train node(s) and 1 solids train node(s). Extracted 15 permit limit parameter(s). Generated 29 Nymph Log entry/entries from public sources. Found 1 source document(s). Operating targets were left empty \u2014 these are internal to the plant, not derived from permit limits. MOR (Monthly Operating Report) readings were left empty \u2014 no public plant-specific discharge monitoring data was ingested. Skipped 23 surface(s): permitLimits.Solids, total suspended; permitLimits.Solids, total suspended; permitLimits.Nitrogen, Kjeldahl, total [as N]; permitLimits.Nitrogen, Kjeldahl, total [as N]; permitLimits.Nitrite + Nitrate total [as N]; permitLimits.Nitrite + Nitrate total [as N]; permitLimits.Phosphorus, total [as P]; permitLimits.Phosphorus, total [as P]; permitLimits.Flow, in conduit or thru treatment plant; permitLimits.Mercury, total recoverable; permitLimits.BOD, carbonaceous [5 day, 20 C]; permitLimits.BOD, carbonaceous [5 day, 20 C]; permitLimits.pH; permitLimits.Solids, total suspended; permitLimits.Nitrogen, ammonia total [as N]; permitLimits.Nitrogen, Kjeldahl, total [as N]; permitLimits.Nitrite + Nitrate total [as N]; permitLimits.Phosphorus, total [as P]; permitLimits.Flow, in conduit or thru treatment plant; permitLimits.E. coli; permitLimits.BOD, carbonaceous [5 day, 20 C]; overview.basics.averageFlowMGD; overview.basics.peakFlowMGD.",
+    "watersheds": [
+      {
+        "huc12": "031300031303",
+        "name": "Tobannee Creek-Chattahoochee River",
+        "receivingWaterBodies": [
+          "BARBOUR CREEK (WALTER F GEORGE LAKE)",
+          "CHATTAHOOCHEE RIVER (WALTER F GEORGE LAKE)"
+        ],
+        "impairedParameters": [
+          "Mercury, total recoverable",
+          "Nitrite plus nitrate total 1 det. (as N)",
+          "Nitrogen, Kjeldahl, total (as N)",
+          "Nitrogen, ammonia total (as N)",
+          "Phosphorus, total (as P)",
+          "Solids, suspended percent removal",
+          "Solids, total suspended"
+        ],
+        "esaAquaticSpeciesFlag": true,
+        "beachClosureLastYear": false
+      },
+      {
+        "huc12": "031300031307",
+        "name": "Barbour Creek-Chattahoochee River",
+        "receivingWaterBodies": [
+          "BARBOUR CREEK (WALTER F GEORGE LAKE)",
+          "CHATTAHOOCHEE RIVER (WALTER F GEORGE LAKE)"
+        ],
+        "impairedParameters": [
+          "Mercury, total recoverable",
+          "Nitrite plus nitrate total 1 det. (as N)",
+          "Nitrogen, Kjeldahl, total (as N)",
+          "Nitrogen, ammonia total (as N)",
+          "Phosphorus, total (as P)",
+          "Solids, suspended percent removal",
+          "Solids, total suspended"
+        ],
+        "esaAquaticSpeciesFlag": true,
+        "beachClosureLastYear": false
+      }
+    ],
+    "dmrLoadings": [
+      {
+        "loadingsType": "DMR Pollutant Loadings (lb/year)",
+        "byYear": {
+          "2022": "52,076",
+          "2023": "75,370",
+          "2024": "78,605",
+          "2025": "71,868",
+          "2026": "14,366"
+        }
+      },
+      {
+        "loadingsType": "DMR Pollutant Loadings - Load Over Limit (lb/year)",
+        "byYear": {
+          "2022": "0",
+          "2023": "0",
+          "2024": "0",
+          "2025": "0",
+          "2026": "0"
+        }
+      },
+      {
+        "loadingsType": "DMR Conventional Loadings (lb/year)",
+        "byYear": {
+          "2025": "13,019"
+        }
+      },
+      {
+        "loadingsType": "DMR Conventional Loadings - Load Over Limit (lb/year)",
+        "byYear": {
+          "2025": "0"
+        }
+      },
+      {
+        "loadingsType": "DMR Toxic-Weighted Loadings (lb-eq/year)",
+        "byYear": {
+          "2022": "1,833",
+          "2023": "1,595",
+          "2024": "1,546",
+          "2025": "1,422",
+          "2026": "434"
+        }
+      },
+      {
+        "loadingsType": "DMR Toxic-Weighted Loadings - Load Over Limit (lb-eq/year)",
+        "byYear": {
+          "2022": "0",
+          "2023": "0",
+          "2024": "0",
+          "2025": "0",
+          "2026": "0"
+        }
+      }
+    ]
+  },
+  "auditRun": {
+    "worker": "plant_knowledge_public_seed",
+    "proposalType": "plant_knowledge",
+    "proposalStatus": "pending_review",
+    "metadata": {
+      "npdesPermitNumber": "AL0061671",
+      "sourceDocuments": [
+        "https://app.adem.alabama.gov/eFile/"
+      ],
+      "conflictCount": 2,
+      "conflictsRef": "see runAudit.conflicts for full detail",
+      "skippedUnsupportedSurfaces": [
+        "targets",
+        "MOR readings"
+      ],
+      "watershedCount": 2,
+      "dmrLoadingTypes": 6
+    }
+  },
+  "nonGoals": {
+    "operatingTargets": "leave_empty_unless_publicly_supported",
+    "morReadings": "leave_empty_unless_public_machine_readable_data_exists"
+  }
+}

@@ -1,0 +1,259 @@
+{
+  "_description": "Worked examples of correctly structured permit limits extracted from real Alabama NPDES permits. Use these as a reference when parsing new permits.",
+
+  "examples": [
+    {
+      "_plant": "Gilliam Creek WWTP — Arab, AL — AL0056626",
+      "_source": "ADEM Final Permit AL0056626, Effluent Limitations Table, Outfall 001",
+      "BOD": {
+        "unit": "mg/L",
+        "outfall": "001",
+        "limits": [
+          {
+            "value": 30,
+            "limitType": "Monthly",
+            "statistic": "average",
+            "qualifier": "<=",
+            "season": null,
+            "frequency": "Monthly",
+            "sampleType": "Composite",
+            "reportOnly": false,
+            "_sourceMeta": {
+              "sourceDoc": "final-permit-AL0056626.pdf",
+              "sourcePage": 4,
+              "confidence": 0.97,
+              "extractedAt": "2026-05-26T00:00:00Z"
+            }
+          },
+          {
+            "value": 45,
+            "limitType": "Weekly",
+            "statistic": "average",
+            "qualifier": "<=",
+            "season": null,
+            "frequency": "Monthly",
+            "sampleType": "Composite",
+            "reportOnly": false,
+            "_sourceMeta": {
+              "sourceDoc": "final-permit-AL0056626.pdf",
+              "sourcePage": 4,
+              "confidence": 0.97,
+              "extractedAt": "2026-05-26T00:00:00Z"
+            }
+          }
+        ]
+      },
+      "TSS": {
+        "unit": "mg/L",
+        "outfall": "001",
+        "limits": [
+          {
+            "value": 30,
+            "limitType": "Monthly",
+            "statistic": "average",
+            "qualifier": "<=",
+            "season": null,
+            "frequency": "Monthly",
+            "sampleType": "Composite",
+            "reportOnly": false,
+            "_sourceMeta": {
+              "sourceDoc": "final-permit-AL0056626.pdf",
+              "sourcePage": 4,
+              "confidence": 0.97,
+              "extractedAt": "2026-05-26T00:00:00Z"
+            }
+          },
+          {
+            "value": 45,
+            "limitType": "Weekly",
+            "statistic": "average",
+            "qualifier": "<=",
+            "season": null,
+            "frequency": "Monthly",
+            "sampleType": "Composite",
+            "reportOnly": false,
+            "_sourceMeta": {
+              "sourceDoc": "final-permit-AL0056626.pdf",
+              "sourcePage": 4,
+              "confidence": 0.97,
+              "extractedAt": "2026-05-26T00:00:00Z"
+            }
+          }
+        ]
+      },
+      "pH": {
+        "unit": "su",
+        "outfall": "001",
+        "limits": [
+          {
+            "value": 6.0,
+            "limitType": "Daily",
+            "statistic": "minimum",
+            "qualifier": ">=",
+            "season": null,
+            "frequency": "Weekly",
+            "sampleType": "Grab",
+            "reportOnly": false,
+            "_sourceMeta": {
+              "sourceDoc": "final-permit-AL0056626.pdf",
+              "sourcePage": 4,
+              "confidence": 0.97,
+              "extractedAt": "2026-05-26T00:00:00Z"
+            }
+          },
+          {
+            "value": 9.0,
+            "limitType": "Daily",
+            "statistic": "maximum",
+            "qualifier": "<=",
+            "season": null,
+            "frequency": "Weekly",
+            "sampleType": "Grab",
+            "reportOnly": false,
+            "_sourceMeta": {
+              "sourceDoc": "final-permit-AL0056626.pdf",
+              "sourcePage": 4,
+              "confidence": 0.97,
+              "extractedAt": "2026-05-26T00:00:00Z"
+            }
+          }
+        ]
+      }
+    },
+
+    {
+      "_plant": "Seasonal ammonia example — generic Alabama municipal permit",
+      "_source": "Illustrates how to encode seasonal limits and geometric means",
+      "Ammonia-N": {
+        "unit": "mg/L",
+        "outfall": "001",
+        "limits": [
+          {
+            "value": 2.0,
+            "limitType": "Monthly",
+            "statistic": "average",
+            "qualifier": "<=",
+            "season": "Apr-Oct",
+            "frequency": "Monthly",
+            "sampleType": "Composite",
+            "reportOnly": false,
+            "_sourceMeta": {
+              "sourceDoc": "final-permit-example.pdf",
+              "sourcePage": 5,
+              "confidence": 0.95,
+              "extractedAt": "2026-05-26T00:00:00Z"
+            }
+          },
+          {
+            "value": 4.0,
+            "limitType": "Monthly",
+            "statistic": "average",
+            "qualifier": "<=",
+            "season": "Nov-Mar",
+            "frequency": "Monthly",
+            "sampleType": "Composite",
+            "reportOnly": false,
+            "_sourceMeta": {
+              "sourceDoc": "final-permit-example.pdf",
+              "sourcePage": 5,
+              "confidence": 0.95,
+              "extractedAt": "2026-05-26T00:00:00Z"
+            }
+          }
+        ]
+      },
+      "E. coli": {
+        "unit": "CFU/100mL",
+        "outfall": "001",
+        "limits": [
+          {
+            "value": 126,
+            "limitType": "Monthly",
+            "statistic": "geometric_mean",
+            "qualifier": "<=",
+            "season": null,
+            "frequency": "Monthly",
+            "sampleType": "Grab",
+            "reportOnly": false,
+            "_sourceMeta": {
+              "sourceDoc": "final-permit-example.pdf",
+              "sourcePage": 5,
+              "confidence": 0.95,
+              "extractedAt": "2026-05-26T00:00:00Z"
+            }
+          },
+          {
+            "value": 235,
+            "limitType": "Daily",
+            "statistic": "maximum",
+            "qualifier": "<=",
+            "season": null,
+            "frequency": "Monthly",
+            "sampleType": "Grab",
+            "reportOnly": false,
+            "_sourceMeta": {
+              "sourceDoc": "final-permit-example.pdf",
+              "sourcePage": 5,
+              "confidence": 0.95,
+              "extractedAt": "2026-05-26T00:00:00Z"
+            }
+          }
+        ]
+      }
+    },
+
+    {
+      "_plant": "Load-based limit example",
+      "_source": "Illustrates mass-based limits in lbs/day alongside concentration limits",
+      "BOD": {
+        "unit": "lbs/day",
+        "outfall": "001",
+        "limits": [
+          {
+            "value": 125,
+            "limitType": "Monthly",
+            "statistic": "average",
+            "qualifier": "<=",
+            "season": null,
+            "frequency": "Monthly",
+            "sampleType": "Composite",
+            "reportOnly": false,
+            "_sourceMeta": {
+              "sourceDoc": "final-permit-loadbased.pdf",
+              "sourcePage": 6,
+              "confidence": 0.93,
+              "extractedAt": "2026-05-26T00:00:00Z"
+            }
+          }
+        ]
+      }
+    },
+
+    {
+      "_plant": "Report-only parameter example",
+      "_source": "Illustrates how to flag monitoring-only parameters that have no numeric limit",
+      "Flow": {
+        "unit": "MGD",
+        "outfall": "001",
+        "limits": [
+          {
+            "value": 0,
+            "limitType": "Daily",
+            "statistic": "average",
+            "qualifier": null,
+            "season": null,
+            "frequency": "Daily",
+            "sampleType": "Meter",
+            "reportOnly": true,
+            "_sourceMeta": {
+              "sourceDoc": "final-permit-reportonly.pdf",
+              "sourcePage": 4,
+              "confidence": 0.99,
+              "extractedAt": "2026-05-26T00:00:00Z"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,282 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "NymphSeedPackage",
+  "description": "Complete seed package for populating a Nymph plant profile from public sources.",
+  "type": "object",
+  "required": ["identity", "identityPatch", "overview", "permitLimits", "nymphLogs", "documents", "runAudit", "auditRun", "nonGoals"],
+  "properties": {
+
+    "identity": {
+      "type": "object",
+      "description": "Full resolved identity — reference copy. Maps to the plants table row.",
+      "required": ["plantName", "npdesPermitNumber", "plantType"],
+      "properties": {
+        "plantName":         { "type": "string", "description": "Full facility name as it appears in the permit." },
+        "location":          { "type": ["string", "null"], "description": "City and state string (e.g. 'Arab, Alabama')." },
+        "city":              { "type": ["string", "null"] },
+        "state":             { "type": ["string", "null"], "description": "Two-letter state code (e.g. AL)." },
+        "zip":               { "type": ["string", "null"] },
+        "coordinates": {
+          "type": "object",
+          "properties": {
+            "lat": { "type": ["number", "null"] },
+            "lon": { "type": ["number", "null"] }
+          }
+        },
+        "plantType":         { "type": "string", "enum": ["wastewater"], "default": "wastewater" },
+        "npdesPermitNumber": { "type": "string" },
+        "confidence":        { "type": "string", "enum": ["high", "medium", "low"] }
+      }
+    },
+
+    "identityPatch": {
+      "type": "object",
+      "description": "Explicit write object for the plants table. Identity changes must live here — not inside the profile JSON.",
+      "required": ["plantName", "plantType"],
+      "properties": {
+        "plantName":  { "type": "string" },
+        "city":       { "type": ["string", "null"] },
+        "state":      { "type": ["string", "null"] },
+        "plantType":  { "type": "string", "enum": ["wastewater"] }
+      }
+    },
+
+    "overview": {
+      "type": "object",
+      "properties": {
+        "basics": {
+          "type": "object",
+          "description": "Maps to plant_profiles.profile_data.basics.",
+          "properties": {
+            "processType":    { "type": ["string", "null"] },
+            "influentType":   { "type": ["string", "null"] },
+            "designFlowMGD":  { "type": ["number", "null"], "description": "Must be a number, not a string." },
+            "averageFlowMGD": { "type": ["number", "null"] },
+            "peakFlowMGD":    { "type": ["number", "null"] },
+            "_sourceMeta": {
+              "type": "object",
+              "properties": {
+                "sourceDoc":   { "type": "string" },
+                "sourcePage":  { "type": ["integer", "null"] },
+                "confidence":  { "type": "number", "minimum": 0, "maximum": 1 },
+                "extractedAt": { "type": "string", "format": "date-time" }
+              }
+            }
+          }
+        },
+        "processTrain": {
+          "type": "object",
+          "description": "Maps to plant_profiles.profile_data.processTrain.",
+          "properties": {
+            "liquid": {
+              "type": "array",
+              "description": "Ordered treatment units in the liquid train. order field determines the diagram flow path.",
+              "items": { "$ref": "#/definitions/processUnit" }
+            },
+            "solids": {
+              "type": "array",
+              "description": "Ordered treatment units in the solids train. Include inactive units with status=inactive — do not omit them.",
+              "items": { "$ref": "#/definitions/processUnit" }
+            },
+            "connections": {
+              "type": "array",
+              "description": "Named side/return flows only: RAS, WAS, recycle, filtrate, centrate, scum, bypass. Main forward path is determined by node order — do NOT add it here.",
+              "items": { "$ref": "#/definitions/connection" }
+            }
+          }
+        }
+      }
+    },
+
+    "permitLimits": {
+      "type": "array",
+      "description": "Maps to plant_profiles.profile_data.permitLimits. Array of parameter objects, one per parameter/outfall combination.",
+      "items": {
+        "type": "object",
+        "required": ["parameter", "unit", "limits"],
+        "properties": {
+          "parameter":   { "type": "string", "description": "Primary parameter name (e.g. BOD, TSS, pH)." },
+          "aliases":     { "type": "array", "items": { "type": "string" }, "description": "Other names used in the permit (e.g. BOD5, CBOD5)." },
+          "unit":        { "type": "string", "description": "Measurement unit exactly as written in the permit (e.g. mg/L, CFU/100mL, lbs/day, su)." },
+          "outfall":     { "type": ["string", "null"], "description": "Outfall designation (e.g. 001, Outfall A)." },
+          "samplePoint": { "type": ["string", "null"], "description": "Sample location context from the permit (e.g. Effluent, Influent, Receiving Stream)." },
+          "limits": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["value", "limitType", "statistic"],
+              "properties": {
+                "value":      { "type": "number" },
+                "limitType":  { "type": "string", "description": "Averaging period: Monthly, Weekly, Daily, Annual." },
+                "statistic":  { "type": "string", "description": "Statistical basis: average, maximum, minimum, geometric_mean." },
+                "qualifier":  { "type": ["string", "null"], "description": "<= or >= direction." },
+                "season":     { "type": ["string", "null"], "description": "Applicable season if seasonal (e.g. Apr-Oct, Nov-Mar)." },
+                "frequency":  { "type": ["string", "null"], "description": "Monitoring frequency (e.g. Daily, Weekly, Monthly)." },
+                "sampleType": { "type": ["string", "null"], "description": "Sample collection type (e.g. Composite, Grab)." },
+                "reportOnly": { "type": "boolean", "default": false },
+                "_sourceMeta": {
+                  "type": "object",
+                  "properties": {
+                    "sourceDoc":   { "type": "string" },
+                    "sourcePage":  { "type": ["integer", "null"] },
+                    "confidence":  { "type": "number", "minimum": 0, "maximum": 1 },
+                    "extractedAt": { "type": "string", "format": "date-time" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "nymphLogs": {
+      "type": "object",
+      "description": "Maps to the four Nymph Logs arrays in plant_profiles.profile_data.",
+      "properties": {
+        "chemicalsDosing":       { "type": "array", "items": { "$ref": "#/definitions/logEntry" } },
+        "operatingHistory":      { "type": "array", "items": { "$ref": "#/definitions/logEntry" } },
+        "proceduresPreferences": { "type": "array", "items": { "$ref": "#/definitions/logEntry" } },
+        "historicalOutcomes":    { "type": "array", "items": { "$ref": "#/definitions/logEntry" } }
+      }
+    },
+
+    "documents": {
+      "type": "array",
+      "description": "Maps to plant_files rows. Every source PDF used during seeding must appear here.",
+      "items": {
+        "type": "object",
+        "required": ["filename", "fileType", "sourceUrl"],
+        "properties": {
+          "filename":    { "type": "string" },
+          "fileType":    { "type": "string", "enum": ["document", "image", "spreadsheet"] },
+          "tags":        { "type": "array", "items": { "type": "string" } },
+          "sourceUrl":   { "type": "string", "description": "Official agency URL where the document was obtained." },
+          "description": { "type": ["string", "null"] }
+        }
+      }
+    },
+
+    "runAudit": {
+      "type": "object",
+      "description": "Human-readable audit trail embedded in the seed package.",
+      "required": ["sourcesSearched", "seedSummary"],
+      "properties": {
+        "sourcesSearched": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "url":           { "type": "string" },
+              "type":          { "type": "string" },
+              "fetchedAt":     { "type": "string", "format": "date-time" },
+              "resultSummary": { "type": "string" }
+            }
+          }
+        },
+        "factsSkipped": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "surface": { "type": "string" },
+              "reason":  { "type": "string" }
+            }
+          }
+        },
+        "conflicts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "field":    { "type": "string" },
+              "values":   { "type": "array", "items": { "type": "string" } },
+              "resolved": { "type": "string" }
+            }
+          }
+        },
+        "seedSummary": {
+          "type": "string",
+          "description": "Must explicitly confirm that operating targets and MOR readings were left empty."
+        }
+      }
+    },
+
+    "auditRun": {
+      "type": "object",
+      "description": "Maps to the agent_runs table row with proposal_type=plant_knowledge.",
+      "required": ["worker", "proposalType", "proposalStatus", "metadata"],
+      "properties": {
+        "worker":         { "type": "string", "enum": ["plant_knowledge_public_seed"] },
+        "proposalType":   { "type": "string", "enum": ["plant_knowledge"] },
+        "proposalStatus": { "type": "string", "enum": ["applied", "pending_review"] },
+        "metadata": {
+          "type": "object",
+          "required": ["npdesPermitNumber", "sourceDocuments", "conflicts", "skippedUnsupportedSurfaces"],
+          "properties": {
+            "npdesPermitNumber":         { "type": "string" },
+            "sourceDocuments":           { "type": "array", "items": { "type": "string" } },
+            "conflicts":                 { "type": "array" },
+            "skippedUnsupportedSurfaces":{ "type": "array", "items": { "type": "string" } }
+          }
+        }
+      }
+    },
+
+    "nonGoals": {
+      "type": "object",
+      "description": "Explicit statement of what this seeding run intentionally left empty.",
+      "required": ["operatingTargets", "morReadings"],
+      "properties": {
+        "operatingTargets": { "type": "string" },
+        "morReadings":      { "type": "string" }
+      }
+    }
+  },
+
+  "definitions": {
+    "processUnit": {
+      "type": "object",
+      "required": ["id", "type", "label", "train", "order", "stage", "status"],
+      "properties": {
+        "id":     { "type": "string", "description": "Unique node ID — slug + train + order (e.g. gilliam-l1)." },
+        "type":   { "type": "string", "description": "Normalized unit type from process_unit_vocab.json." },
+        "label":  { "type": "string", "description": "Human-readable unit name as it appears in the permit or diagram." },
+        "train":  { "type": "string", "enum": ["liquid", "solids"] },
+        "order":  { "type": "integer", "description": "1-based position in the train. Determines the diagram flow path." },
+        "stage":  { "type": "string", "enum": ["preliminary", "primary", "secondary", "disinfection", "discharge", "solids_train"] },
+        "status": { "type": "string", "enum": ["active", "inactive", "standby"], "description": "Inactive units from diagrams must be recorded as inactive — not omitted." },
+        "notes":  { "type": ["string", "null"], "description": "Source note, e.g. 'Source: draft permit application, process unit table, p.12'" }
+      }
+    },
+    "connection": {
+      "type": "object",
+      "required": ["from", "to", "flowType"],
+      "properties": {
+        "from":     { "type": "string" },
+        "to":       { "type": "string" },
+        "flowType": { "type": "string", "description": "RAS, WAS, recycle, filtrate, centrate, scum, bypass, primary_sludge, thickened_sludge, digested_sludge, leachate" }
+      }
+    },
+    "logEntry": {
+      "type": "object",
+      "required": ["value", "source", "confidence", "status", "lastUpdated"],
+      "properties": {
+        "value":       { "type": "string", "description": "Plant-specific fact from a public document. Not generic wastewater knowledge." },
+        "source":      { "type": "string", "enum": ["ai_inference", "operator_confirmed", "document_upload"] },
+        "confidence":  { "type": "number", "minimum": 0, "maximum": 1 },
+        "status":      { "type": "string", "enum": ["confirmed", "needs_review", "rejected"] },
+        "tags":        { "type": "array", "items": { "type": "string" } },
+        "lastUpdated": { "type": "string", "format": "date-time" },
+        "_sourceMeta": {
+          "type": "object",
+          "properties": {
+            "sourceDoc":  { "type": "string" },
+            "sourcePage": { "type": ["integer", "null"] },
+            "sourceUrl":  { "type": ["string", "null"] }
+          }
+        }
+      }
+    }
+  }
+}

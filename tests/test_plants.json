@@ -1,0 +1,113 @@
+{
+  "_description": "Test plants for the Nymph Plant Knowledge Seeding Skill. The skill supports all 50 US states — the NPDES prefix determines which state agency and portal are used. The Alabama plants below are the primary regression suite. Add plants from other states as needed using the same schema.",
+
+  "_stateSupport": "All 50 US states are supported. State routing is determined automatically from the NPDES permit number prefix (AL = Alabama/ADEM, TX = Texas/TCEQ, FL = Florida/FDEP, CA = California/SWRCB, GA = Georgia/EPD, NY = New York/NYSDEC, etc.). See references/state_portal_patterns.md and the NPDES_STATE_MAP in scripts/seed_runner.py for the full mapping.",
+
+  "plants": [
+    {
+      "id": "test-001",
+      "plantName": "Eufaula WWTP",
+      "location": "Eufaula, Alabama",
+      "city": "Eufaula",
+      "state": "AL",
+      "npdes": "AL0061671",
+      "owner": "City of Eufaula",
+      "expectedOutputChecks": {
+        "processType": "Activated Sludge or lagoon — confirm from permit",
+        "influentType": "Domestic",
+        "designFlowMGD": "Small to mid-size plant — expect 1–5 MGD",
+        "permitLimits": "BOD, TSS, pH at minimum",
+        "processTrain": "At least one secondary treatment unit expected"
+      },
+      "notes": "Southeast Alabama municipal plant on the Chattahoochee River. State portal: ADEM e-Permits."
+    },
+    {
+      "id": "test-002",
+      "plantName": "Madison WWTP",
+      "location": "Madison, Alabama",
+      "city": "Madison",
+      "state": "AL",
+      "npdes": "AL0071897",
+      "owner": "City of Madison",
+      "expectedOutputChecks": {
+        "processType": "Activated Sludge",
+        "influentType": "Domestic",
+        "designFlowMGD": "Growing suburb — expect 3–10 MGD",
+        "permitLimits": "BOD, TSS, NH3-N, pH expected — may include nutrient limits given proximity to sensitive receiving waters",
+        "processTrain": "Aeration basin and secondary clarifier expected"
+      },
+      "notes": "Fast-growing suburb north of Huntsville. Good test for newer permits with tighter nutrient limits. State portal: ADEM e-Permits."
+    },
+    {
+      "id": "test-003",
+      "plantName": "Alabaster WWTP",
+      "location": "Alabaster, Alabama",
+      "city": "Alabaster",
+      "state": "AL",
+      "npdes": "AL0025828",
+      "owner": "City of Alabaster",
+      "expectedOutputChecks": {
+        "processType": "Activated Sludge",
+        "influentType": "Domestic",
+        "designFlowMGD": "Mid-size suburban plant — expect 3–8 MGD",
+        "permitLimits": "BOD, TSS, pH, may include phosphorus",
+        "processTrain": "Secondary treatment with clarification expected"
+      },
+      "notes": "Shelby County suburban plant south of Birmingham. Tests mid-size suburban facility handling. State portal: ADEM e-Permits."
+    },
+    {
+      "id": "test-004",
+      "plantName": "Fairhope WWTP",
+      "location": "Fairhope, Alabama",
+      "city": "Fairhope",
+      "state": "AL",
+      "npdes": "AL0020842",
+      "owner": "City of Fairhope",
+      "expectedOutputChecks": {
+        "processType": "Activated Sludge",
+        "influentType": "Domestic",
+        "designFlowMGD": "Small coastal plant — expect 1–4 MGD",
+        "permitLimits": "Expect stricter limits including nutrients given discharge to Mobile Bay watershed",
+        "processTrain": "Secondary treatment expected; possible nutrient removal"
+      },
+      "notes": "Coastal plant discharging to Mobile Bay watershed — good test for stricter nutrient permit limits. State portal: ADEM e-Permits."
+    },
+    {
+      "id": "test-005",
+      "plantName": "Saraland WWTP",
+      "location": "Saraland, Alabama",
+      "city": "Saraland",
+      "state": "AL",
+      "npdes": "AL0055786",
+      "owner": "City of Saraland",
+      "expectedOutputChecks": {
+        "processType": "Activated Sludge or extended aeration — confirm from permit",
+        "influentType": "Domestic",
+        "designFlowMGD": "Small plant — expect 1–3 MGD",
+        "permitLimits": "BOD, TSS, pH at minimum",
+        "processTrain": "At least one secondary treatment unit expected"
+      },
+      "notes": "North Mobile County suburban plant. Tests small facility near coastal receiving waters. State portal: ADEM e-Permits."
+    }
+  ],
+
+  "otherStateExamples": {
+    "_note": "These are example command patterns for other states. Substitute real NPDES numbers and plant names. The skill routes to the correct state portal automatically.",
+    "texas":      "python scripts/seed_runner.py --plant \"Austin WWTP\" --location \"Austin, Texas\" --npdes TX0000000",
+    "florida":    "python scripts/seed_runner.py --plant \"Orlando WWTP\" --location \"Orlando, Florida\" --npdes FL0000000",
+    "california": "python scripts/seed_runner.py --plant \"Sacramento WWTP\" --location \"Sacramento, California\" --npdes CA0000000",
+    "georgia":    "python scripts/seed_runner.py --plant \"Athens WWTP\" --location \"Athens, Georgia\" --npdes GA0000000",
+    "newYork":    "python scripts/seed_runner.py --plant \"Buffalo WWTP\" --location \"Buffalo, New York\" --npdes NY0000000"
+  },
+
+  "runInstructions": {
+    "singlePlant": "python scripts/seed_runner.py --plant \"Eufaula WWTP\" --location \"Eufaula, Alabama\" --npdes AL0061671",
+    "withOwner": "python scripts/seed_runner.py --plant \"Madison WWTP\" --location \"Madison, Alabama\" --npdes AL0071897 --owner \"City of Madison\"",
+    "withProduction": "python scripts/seed_runner.py --plant \"Alabaster WWTP\" --location \"Alabaster, Alabama\" --npdes AL0025828 --production",
+    "batchNote": "Run each plant separately. Each run creates a <npdes>_seed_package.json output file.",
+    "validateOnly": "python scripts/seed_validator.py --input AL0061671_seed_package.json",
+    "provenanceLint": "python scripts/provenance_linter.py --input AL0061671_seed_package.json",
+    "dbReadback": "python scripts/db_readback.py --npdes AL0061671 --expected AL0061671_seed_package.json --dry-run",
+    "envRequired": "OPENAI_API_KEY must be set for PDF parsing. ECHO lookup works without an API key."
+  }
+}

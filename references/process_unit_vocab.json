@@ -1,0 +1,175 @@
+{
+  "_description": "Canonical node types for Nymph process train nodes. Each entry has a type key (the value to use in the seed JSON), a stage, the default train, and aliases that the parser should normalize to this type.",
+
+  "units": [
+    {
+      "type": "headworks",
+      "label": "Headworks",
+      "train": "liquid",
+      "stage": "preliminary",
+      "aliases": ["headwork", "influent structure", "wet well", "influent pump station", "lift station", "influent pumping station", "bar screen", "coarse screen", "intake structure"]
+    },
+    {
+      "type": "screening",
+      "label": "Screening",
+      "train": "liquid",
+      "stage": "preliminary",
+      "aliases": ["bar screens", "fine screens", "mechanically cleaned screens", "step screens", "band screens", "drum screens", "microscreens"]
+    },
+    {
+      "type": "grit_removal",
+      "label": "Grit Removal",
+      "train": "liquid",
+      "stage": "preliminary",
+      "aliases": ["grit chamber", "grit removal unit", "aerated grit chamber", "vortex grit removal", "grit classifier", "detritor"]
+    },
+    {
+      "type": "flow_equalization",
+      "label": "Flow Equalization",
+      "train": "liquid",
+      "stage": "preliminary",
+      "aliases": ["equalization basin", "EQ basin", "flow equalization tank", "surge basin", "peak flow storage"]
+    },
+    {
+      "type": "primary_clarifier",
+      "label": "Primary Clarifier",
+      "train": "liquid",
+      "stage": "primary",
+      "aliases": ["primary settling tank", "primary sedimentation tank", "primary clarification", "primary settler", "primary sedimentation", "sedimentation tank", "settling tank", "primary treatment"]
+    },
+    {
+      "type": "aeration_basin",
+      "label": "Aeration Basin",
+      "train": "liquid",
+      "stage": "secondary",
+      "aliases": ["aeration tank", "activated sludge basin", "activated sludge tank", "extended aeration basin", "extended aeration tank", "oxidation ditch", "oxidation channel", "biological aeration", "bioreactor", "sequencing batch reactor", "SBR", "contact stabilization", "step aeration", "tapered aeration", "plug flow aeration", "complete mix aeration", "carousel oxidation ditch", "Orbal oxidation ditch", "racetrack oxidation ditch", "aeration zone"]
+    },
+    {
+      "type": "mbr",
+      "label": "Membrane Bioreactor",
+      "train": "liquid",
+      "stage": "secondary",
+      "aliases": ["MBR", "membrane bioreactor", "membrane aeration basin", "submerged MBR", "external MBR", "MBR tank"]
+    },
+    {
+      "type": "secondary_clarifier",
+      "label": "Secondary Clarifier",
+      "train": "liquid",
+      "stage": "secondary",
+      "aliases": ["final clarifier", "secondary settling tank", "secondary sedimentation tank", "secondary settler", "clarifier", "settling basin", "sedimentation basin", "final settling"]
+    },
+    {
+      "type": "trickling_filter",
+      "label": "Trickling Filter",
+      "train": "liquid",
+      "stage": "secondary",
+      "aliases": ["biofilter", "biological filter", "rock filter", "plastic media filter", "RBC", "rotating biological contactor", "attached growth", "fixed film", "roughing filter", "high-rate filter"]
+    },
+    {
+      "type": "lagoon",
+      "label": "Lagoon",
+      "train": "liquid",
+      "stage": "secondary",
+      "aliases": ["stabilization pond", "oxidation pond", "aerated lagoon", "facultative lagoon", "aerobic lagoon", "anaerobic lagoon", "waste stabilization pond", "polishing pond", "pond system"]
+    },
+    {
+      "type": "disinfection",
+      "label": "Disinfection",
+      "train": "liquid",
+      "stage": "disinfection",
+      "aliases": ["chlorination", "chlorine contact chamber", "chlorine contact tank", "UV disinfection", "UV system", "UV reactor", "ozonation", "contact chamber", "disinfection basin", "chlorine basin"]
+    },
+    {
+      "type": "dechlorination",
+      "label": "Dechlorination",
+      "train": "liquid",
+      "stage": "disinfection",
+      "aliases": ["sulfite addition", "sodium bisulfite", "dechlorination chamber", "sodium sulfite", "dechlorination contact", "SO2 dechlorination"]
+    },
+    {
+      "type": "filtration",
+      "label": "Filtration",
+      "train": "liquid",
+      "stage": "disinfection",
+      "aliases": ["sand filter", "dual media filter", "deep bed filter", "multimedia filter", "tertiary filter", "polishing filter", "cloth filter", "disk filter", "traveling bridge filter", "tertiary filtration"]
+    },
+    {
+      "type": "outfall",
+      "label": "Outfall",
+      "train": "liquid",
+      "stage": "discharge",
+      "aliases": ["discharge point", "effluent outfall", "effluent pipe", "receiving water discharge", "land application", "spray irrigation discharge"]
+    },
+
+    {
+      "type": "gravity_thickener",
+      "label": "Gravity Thickener",
+      "train": "solids",
+      "stage": "solids_train",
+      "aliases": ["thickener", "gravity sludge thickener", "sludge thickener", "primary sludge thickener", "GBT thickener"]
+    },
+    {
+      "type": "daf_thickener",
+      "label": "DAF Thickener",
+      "train": "solids",
+      "stage": "solids_train",
+      "aliases": ["dissolved air flotation thickener", "DAF unit", "flotation thickener", "DAFT"]
+    },
+    {
+      "type": "anaerobic_digester",
+      "label": "Anaerobic Digester",
+      "train": "solids",
+      "stage": "solids_train",
+      "aliases": ["anaerobic digestion", "digester", "sludge digester", "mesophilic digester", "thermophilic digester", "conventional digester", "egg-shaped digester", "floating cover digester", "fixed cover digester"]
+    },
+    {
+      "type": "aerobic_digester",
+      "label": "Aerobic Digester",
+      "train": "solids",
+      "stage": "solids_train",
+      "aliases": ["aerobic digestion", "aerobic sludge digester", "aerated sludge digestion"]
+    },
+    {
+      "type": "belt_press",
+      "label": "Belt Press",
+      "train": "solids",
+      "stage": "solids_train",
+      "aliases": ["belt filter press", "BFP", "dewatering belt", "gravity belt thickener", "GBT"]
+    },
+    {
+      "type": "centrifuge",
+      "label": "Centrifuge",
+      "train": "solids",
+      "stage": "solids_train",
+      "aliases": ["decanter centrifuge", "solid bowl centrifuge", "centrifuge dewatering", "centrate return"]
+    },
+    {
+      "type": "filter_press",
+      "label": "Filter Press",
+      "train": "solids",
+      "stage": "solids_train",
+      "aliases": ["plate and frame filter press", "recessed plate filter press", "diaphragm filter press"]
+    },
+    {
+      "type": "sludge_drying",
+      "label": "Sludge Drying",
+      "train": "solids",
+      "stage": "solids_train",
+      "aliases": ["drying bed", "sand drying bed", "sludge drying beds", "drying reed beds", "solar drying", "thermal dryer", "sludge dryer", "indirect dryer", "direct dryer"]
+    },
+    {
+      "type": "biosolids_disposal",
+      "label": "Biosolids Disposal",
+      "train": "solids",
+      "stage": "solids_train",
+      "aliases": ["land application", "landfill disposal", "biosolids land application", "composting", "incineration", "sludge disposal", "beneficial reuse", "Class A biosolids", "Class B biosolids"]
+    },
+    {
+      "type": "sludge_storage",
+      "label": "Sludge Storage",
+      "train": "solids",
+      "stage": "solids_train",
+      "aliases": ["sludge holding tank", "biosolids storage tank", "sludge lagoon", "storage basin", "equalization storage"]
+    }
+  ]
+}
