@@ -1,6 +1,6 @@
 # Nymph Plant Knowledge Seeding Skill
 
-An automated pipeline that seeds structured plant knowledge into [Nymph](https://nyad.io) from public regulatory sources, given an NPDES permit number.
+An automated pipeline that seeds structured plant knowledge into [Nymph](https://nyad.ai) from public regulatory sources, given an NPDES permit number.
 
 ## What It Does
 
